@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="news.js"></script>
-        <link rel="stylesheet" href="Styles.css">
+        <link rel="stylesheet" href="newsStyles.css">
     </head>
     <title>Keepin Safe</title>
     <header>
+        <!-- Navigation Bar In Header -->
         <nav>
             <a href="index.html" class="nav-link logo">Keepin Safe</a>
             <ul class="nav-list">
@@ -30,18 +30,20 @@
         <h1 class="title">Keepin Safe | News</h1>
     </header>
     <body>
-        <h1 id="test">Current News on Covid-19<h1>
+        <!-- News Cards -->
+        <h1>Current News on Covid-19<h1>
             <div class="containerCard">
+                <button class="previous" id="prev_button" onclick="prev()" disabled></button>
                 <div class="card">
                     <div class="face face1">
                         <div class="content">
                             <img src="#" id="news_image_1">
-                            <h3 id="news_title_1"></h3>
+                            <h3 id="news_title_1">Loading...</h3>
                         </div>
                     </div>
                     <div class="face face2">
                         <div class="content">
-                            <p id="news_content_1"></p>
+                            <p id="news_content_1">Loading...</p>
                                 <a href="#" id="news_url_1">Read More</a>
                         </div>
                     </div>
@@ -50,12 +52,12 @@
                     <div class="face face1">
                         <div class="content">
                             <img src="#" id="news_image_2">
-                            <h3 id="news_title_2"></h3>
+                            <h3 id="news_title_2">Loading...</h3>
                         </div>
                     </div>
                     <div class="face face2">
                         <div class="content">
-                            <p id="news_content_2"></p>
+                            <p id="news_content_2">Loading...</p>
                                 <a href="#" id="news_url_2">Read More</a>
                         </div>
                     </div>
@@ -64,24 +66,35 @@
                     <div class="face face1">
                         <div class="content">
                             <img src="#" id="news_image_3">
-                            <h3 id="news_title_3"></h3>
+                            <h3 id="news_title_3">Loading...</h3>
                         </div>
                     </div>
                     <div class="face face2">
                         <div class="content">
-                            <p id="news_content_3"></p>
+                            <p id="news_content_3">Loading...</p>
                                 <a href="#" id="news_url_3">Read More</a>
                         </div>
                     </div>
                 </div>
+                <button class="next" id="next_button" onclick="next()"></button>
+            </div>
+            <div class="slide">
+                <input type="radio" id="first" disabled>
+                <input type="radio" id="second" disabled>
+                <input type="radio" id="third" disabled>
             </div>
         <br>
         <br>
-        <h2>Here are links to several news sources, to keep you updated.<h2>    
+        <h2>Here are a few links where you can find several other news sources to keep you updated.<h2>    
         <!--news source links-->    
         <a href="https://news.google.com/search?for=covid&hl=en-US&gl=US&ceid=US%3Aen">
             Visit Google's own compilation of Covid news from various news sources!</a>
         <br>
         <br>
+        <a href="https://www.allsides.com/topics/coronavirus?search=coronavirus#gsc.tab=0&gsc.q=coronavirus&gsc.page=1">
+            Visit AllSides compilation of Covid news from across the political spectrum.</a>
+        <br>
+        <br>
+        <script src="news.js"></script>
     </body>    
 </html>    

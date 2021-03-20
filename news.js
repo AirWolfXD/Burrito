@@ -1,36 +1,74 @@
 var request = new XMLHttpRequest();
 
-var x = new Date();
-var y = x.getFullYear().toString();
-var m = (x.getMonth() + 1).toString();
-var d = x.getDate().toString();
-(d.length == 1) && (d = '0' + d);
-(m.length == 1) && (m = '0' + m);
-var day = y + '-' + m + '-' + d;
-
-request.open('GET', `https://newsapi.org/v2/everything?q=COVID-Virus&from=2021-03-20&sortBy=publishedAt&apiKey=a49ee0e45e984dfbaae3c6d658510646&pageSize=3&page=2&language=en`, true);
+request.open('GET', `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=covid&sort=newest&api-key=kHnroZo6gVGRL4ABCkQPavVupsy4ZAzS`, true);
 //Fetches data from api and sends to html code
+var data;
+var i = 0;
+if(i == 0){
+    document.getElementById("first").checked = true;
+    document.getElementById("second").checked = false;
+    document.getElementById("third").checked = false;
+}
 request.onload = function () {
-    var data = JSON.parse(this.response);
-    document.getElementById("news_title_1").innerHTML = data.articles[0].title;
-    document.getElementById("news_content_1").innerHTML = data.articles[0].description;
-    document.getElementById("news_image_1").innerHTML = data.articles[0].urlToImage;
-    document.getElementById("news_url_1").innerHTML = data.articles[0].url;
+    data = JSON.parse(this.response);
+    add(i);
 }
 
-requests.send();
+const next = () => {
+    if(i == 0){
+        document.getElementById("prev_button").disabled = false;
+    }
+    i += 3;
+    if(i == 3){
+        document.getElementById("first").checked = false;
+        document.getElementById("second").checked = true;
+        document.getElementById("third").checked = false;
+    } else if (i == 6){
+        document.getElementById("first").checked = false;
+        document.getElementById("second").checked = false;
+        document.getElementById("third").checked = true;
+    }
+    if(!data.response.docs[i + 3]){
+        document.getElementById("next_button").disabled = true;
+    }
+    add(i);
+}
 
-// const NewsAPI = require('newsapi');
-// const newsapi = new NewsAPI('a49ee0e45e984dfbaae3c6d658510646');
+const prev = () => {
+    if(!data.response.docs[i + 3]){
+        document.getElementById("next_button").disabled = false;
+    }
+    i -= 3;
+    if(i == 3){
+        document.getElementById("first").checked = false;
+        document.getElementById("second").checked = true;
+        document.getElementById("third").checked = false;
+    } else if (i == 0){
+        document.getElementById("first").checked = true;
+        document.getElementById("second").checked = false;
+        document.getElementById("third").checked = false;
+    }
+    if(i == 0){
+        document.getElementById("prev_button").disabled = true;
+    }
+    add(i);
+}
 
-// newsapi.v2.topHeadlines({
-//     q: 'COVID-Virus',
-//     language: 'en',
-//     from: day
-// }).then(response=>{
-//     document.getElementById("news_title_1").innerHTML = response.articles[0].title;
-//     document.getElementById("news_content_1").innerHTML = response.articles[0].description;
-//     document.getElementById("news_image_1").src = response.articles[0].urlToImage;
-//     document.getElementById("news_url_1").href = response.articles[0].url;
-//     console.log(response);
-// })
+const add = (pos) => {
+    document.getElementById("news_title_1").innerHTML = data.response.docs[pos].headline.main;
+    document.getElementById("news_content_1").innerHTML = data.response.docs[pos].abstract;
+    document.getElementById("news_image_1").src = 'https://www.nytimes.com/' + data.response.docs[pos].multimedia[22].url;
+    document.getElementById("news_url_1").href = data.response.docs[pos].web_url;
+    
+    document.getElementById("news_title_2").innerHTML = data.response.docs[pos + 1].headline.main;
+    document.getElementById("news_content_2").innerHTML = data.response.docs[pos + 1].abstract;
+    document.getElementById("news_image_2").src = 'https://www.nytimes.com/' + data.response.docs[pos + 1].multimedia[22].url;
+    document.getElementById("news_url_2").href = data.response.docs[pos + 1].web_url;
+
+    document.getElementById("news_title_3").innerHTML = data.response.docs[pos + 2].headline.main;
+    document.getElementById("news_content_3").innerHTML = data.response.docs[pos + 2].abstract;
+    document.getElementById("news_image_3").src = 'https://www.nytimes.com/' + data.response.docs[pos + 2].multimedia[22].url;
+    document.getElementById("news_url_3").href = data.response.docs[pos + 2].web_url;
+}
+
+request.send();

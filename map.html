@@ -2,10 +2,12 @@
 <html>
     <head>
         <!-- <script src="stats.js"></script> -->
-        <link rel="stylesheet" href="Styles.css">
+        <link rel="stylesheet" href="mapsStyles.css">
+        <script src="map.js"></script>
     </head>
     <title>Keepin Safe</title>
     <header>
+        <!-- Navigation Bar In Header -->
         <nav>
             <a href="index.html" class="nav-link logo">Keepin Safe</a>
             <ul class="nav-list">
@@ -32,6 +34,11 @@
     <body>
         <h1>Map of Covid Testing and Vaccination<h1>
         <h2>Toggle to see Testing Centers nearby, and nearby Vaccination Centers as well.<h2>    
-        <!--something map here, maybe incorporate google maps plus a filter-->    
-    </body>    
+        <!--something map here, maybe incorporate google maps plus a filter-->  
+        <div id="map"></div>  
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZh9VO9mzYkFWsyGMATgiJEXyFVD8i1ZA&callback=initMap&libraries=&v=weekly"
+            async
+        ></script>
+    </body>
 </html>    
