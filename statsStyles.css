@@ -21,7 +21,7 @@ h5{
 }
 .title{
     margin-top: 5rem;
-    color:#ffffff;
+    color:rgb(244, 255, 250);
 }
 body{
     font-family: 'Quicksand', sans-serif;
@@ -29,7 +29,7 @@ body{
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background: #ffffff;
+    background: rgb(88, 228, 162);
     justify-content: center;
     align-items: center;
 }
@@ -113,4 +113,28 @@ nav{
 
 .nav-item:nth-child(5):hover ~ .active{
     transform: translateX(40rem);
+}
+
+/* Card styles */
+.card_collection{
+    position: relative;
+    width: 1200px;
+    margin: auto;
+    height: 100%;
+    text-align: center;
+}
+
+.card {
+    background: rgb(244, 255, 250);
+    border-radius: 2px;
+    display: inline-block;
+    height: 300px;
+    margin: 2rem;
+    position: relative;
+    width: 300px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.card:hover {
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }

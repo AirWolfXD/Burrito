@@ -1,6 +1,6 @@
 var request = new XMLHttpRequest();
 
-request.open('GET', `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=covid&sort=newest&api-key=kHnroZo6gVGRL4ABCkQPavVupsy4ZAzS`, true);
+request.open('GET', `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=covid&sort=newest&fq=type_of_material:(%22News%22)&fq=subject:(%22Covid%22)&api-key=kHnroZo6gVGRL4ABCkQPavVupsy4ZAzS`, true);
 //Fetches data from api and sends to html code
 var data;
 var i = 0;
@@ -27,15 +27,13 @@ const next = () => {
         document.getElementById("first").checked = false;
         document.getElementById("second").checked = false;
         document.getElementById("third").checked = true;
-    }
-    if(!data.response.docs[i + 3]){
         document.getElementById("next_button").disabled = true;
     }
     add(i);
 }
 
 const prev = () => {
-    if(!data.response.docs[i + 3]){
+    if(i == 6){
         document.getElementById("next_button").disabled = false;
     }
     i -= 3;
