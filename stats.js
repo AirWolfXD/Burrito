@@ -10,6 +10,8 @@ request.onload = function () {
     document.getElementById("total_case").innerHTML = data["Total Cases_text"];
     document.getElementById("total_death").innerHTML = data["Total Deaths_text"];
     document.getElementById("total_recover").innerHTML = data["Total Recovered_text"];
+    document.getElementById("last_update").innerHTML = data["Last Update"];
 }
 
 request.send();
+
