@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700&subset=latin-ext');
+@import url('https://github.com/robfletcher/gradle-compass');
+
 h1{
     margin-top: 10px;
     text-align: center;
@@ -26,21 +28,17 @@ h5{
     margin-top: 5rem;
     color:#ffffff;
 }
-.logoPic{
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
 body{
     font-family: 'Quicksand', sans-serif;
     font-size: 15px;
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background: rgb(88, 228, 162);
+    background: #ACFFFF;
     justify-content: center;
     align-items: center;
 }
+
 html{
     position: relative;
     overflow-x: hidden !important;
@@ -50,13 +48,13 @@ html{
 /* Start of Nav Bar Styling */
 
 header{
-    background-color: #050505;
+    background-color: #000000;
 }
 
 .container{
     width: 100%;
     max-width: 98rem;
-    margin: 0auto;
+    margin: 0 auto;
 }
 
 nav{
@@ -85,16 +83,19 @@ nav{
 }
 
 .nav-link{
-    font-size: 1.4 rem;
+    font-size: 1.4rem;
     text-transform: uppercase;
     text-decoration: none;
-    color: #ffffff;
+    color: #45CBD8
+    ;
+;
 }
 
 .active{
     height: 2px;
     width: 10rem;
-    background-color: #ffffff;
+    background-color: #ACFFFF
+    ;
     position: absolute;
     bottom: -1rem;
     transition: transform .6s;
@@ -128,4 +129,25 @@ nav{
 .para {
     margin-left: 10em;
     margin-right: 10em;
+}
+
+/* Card for quiz */
+
+.card_collection{
+    position: relative;
+    width: 1200px;
+    margin: auto;
+    height: 100%;
+    text-align: center;
+}
+
+.card {
+    background: rgb(244, 255, 250);
+    border-radius: 2px;
+    display: inline-block;
+    height: 820px;
+    margin: 2rem;
+    position: relative;
+    width: 500px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }

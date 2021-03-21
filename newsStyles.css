@@ -1,3 +1,4 @@
+/*importing to organize formatting for headers*/
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700&subset=latin-ext');
 h1{
     margin-top: 10px;
@@ -29,7 +30,7 @@ body{
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background: rgb(88, 228, 162);
+    background: #ACFFFF;
     justify-content: center;
     align-items: center;
 }
@@ -80,13 +81,13 @@ nav{
     font-size: 1.4 rem;
     text-transform: uppercase;
     text-decoration: none;
-    color: #ffffff;
+    color: #45CBD8;
 }
 
 .active{
     height: 2px;
     width: 10rem;
-    background-color: #ffffff;
+    background-color: #ACFFFF;
     position: absolute;
     bottom: -1rem;
     transition: transform .6s;

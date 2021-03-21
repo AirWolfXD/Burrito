@@ -1,3 +1,4 @@
+//setting up and linking the website together
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
