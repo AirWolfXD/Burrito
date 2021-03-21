@@ -1,6 +1,5 @@
 var request = new XMLHttpRequest();
 
-
 request.open('GET', `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=covid&sort=newest&fq=type_of_material:(%22News%22)&fq=subject:(%22Covid%22)&api-key=kHnroZo6gVGRL4ABCkQPavVupsy4ZAzS`, true);
 //Fetches data from api and sends to html code
 var data;
