@@ -3,7 +3,11 @@
     <head>
         <!-- <script src="stats.js"></script> -->
         <link rel="stylesheet" href="mapsStyles.css">
-        <script src="map.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
     </head>
     <title>Keepin Safe</title>
     <header>
@@ -34,11 +38,8 @@
     <body>
         <h1>Map of Covid Testing and Vaccination<h1>
         <h2>Toggle to see Testing Centers nearby, and nearby Vaccination Centers as well.<h2>    
-        <!--something map here, maybe incorporate google maps plus a filter-->  
-        <div id="map"></div>  
-        <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZh9VO9mzYkFWsyGMATgiJEXyFVD8i1ZA&callback=initMap&libraries=&v=weekly"
-            async
-        ></script>
+        <!--Create Maps-->  
+        <div id="mapid"></div>  
+        <script src='map.js'></script>
     </body>
 </html>    

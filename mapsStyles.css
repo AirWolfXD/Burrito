@@ -115,7 +115,6 @@ nav{
     transform: translateX(40rem);
 }
 
-#map{
+#mapid{
     height: 400px;
-    width: 100%;
 }
