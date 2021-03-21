@@ -89,9 +89,9 @@ const questions = [
       question: "How long should you wash your hands for?",
       answers: {
         a: "5 seconds",
-        b: "2 minutes",
-        c: "20 seconds",
-        d: "3 minutes"
+        b: "15 seconds",
+        c: "1 minute",
+        d: "0 seconds"
       },
       correctAnswer: "c"
     },
