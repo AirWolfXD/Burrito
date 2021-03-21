@@ -28,7 +28,7 @@ h5{
     margin-bottom: 8px;
 }
 .about{
-    font-size: 13px;
+    font-size: 16px;
 }
 body{
     font-family: 'Quicksand', sans-serif;
@@ -120,4 +120,11 @@ nav{
 
 .nav-item:nth-child(5):hover ~ .active{
     transform: translateX(40rem);
+}
+
+/* Styling for the list */
+ul{
+    font-size: 18px;
+    text-align: center;
+    list-style: inside;
 }
