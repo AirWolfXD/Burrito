@@ -1,13 +1,4 @@
-// //Get data for testing locations and vaccination locations from APi
-// var request = new XMLHttpRequest();
-
-// request.open('GET', `https://burritoapi.github.io/burrito-api/locations.json`, true);
-// //Fetches data from api and sends to html code
-// var data;
-// request.onload = function () {
-//     data = JSON.parse(this.response);
-// }
-
+// Get data for testing locations and vaccination locations from APi
 $.getJSON("https://burritoapi.github.io/burrito-api/locations.json").done(function( data ) {
    //geolocation to find the user's position
     if(navigator.geolocation){
@@ -19,7 +10,8 @@ $.getJSON("https://burritoapi.github.io/burrito-api/locations.json").done(functi
                 };
                 //marker creation 
                 var current_position = new L.marker([pos.lat, pos.lng]).bindPopup("This is your current location");
-            
+                
+                //setting up custom markers to differentiate between testing and vaccination center
                 var testingIcon = L.icon({
                     iconUrl: `https://cdn.discordapp.com/attachments/822509285984174122/823129042366234624/testing.png`,
                     iconSize: [25, 38],
@@ -31,6 +23,9 @@ $.getJSON("https://burritoapi.github.io/burrito-api/locations.json").done(functi
                     iconSize: [25, 38],
                     iconAnchor: [13, 10],
                 });
+
+                //setting up an array of markers for testing/vaccinating centers
+                //the markers include the name of the center, and contact information
 
                 var testingArray = [];
                 var vaccinationArray = [];
@@ -58,7 +53,8 @@ $.getJSON("https://burritoapi.github.io/burrito-api/locations.json").done(functi
                 L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=6QcmT0EaRzPo2v42i5Fp', {
                     attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
                 }).addTo(map);
-
+                
+                //adding the markers as overlay layers to the map
                 var baseMaps = {};
                 var overlayMaps = {
                     "Vaccination Centers": vaccination,
